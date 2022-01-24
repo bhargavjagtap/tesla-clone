@@ -1,0 +1,15 @@
+Redux, React-Router, Firebase
+
+dependencies
+npm i @material-ui/core @material-ui/icons react-router-dom
+
+Reducer
+its an action to trigger state and action is basically to 
+trigger state
+
+Dispatch is basically a very powerful function to dispatch an 
+action called login in our case. Payload is gonna be the user
+information like password email name etc.. 
+
+This approach is basically used to prevent prop draining,
+User Slice is basically like a data layerer
