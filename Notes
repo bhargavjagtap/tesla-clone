@@ -1,5 +1,7 @@
 Redux, React-Router, Firebase
 
+useEffect is a very powerful hook which runs in a specific condition, It's gonna run only once when the component loads if it has array argument otherwise its gonna run everytime if it doesn't has the array comp. Anything we use within dispatch has to be imported in order to use it as a dependency, say we imported dispatch in our case. So this entire thing was about persistence of the component.
+
 dependencies
 npm i @material-ui/core @material-ui/icons react-router-dom
 

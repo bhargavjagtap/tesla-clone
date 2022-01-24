@@ -82,7 +82,7 @@
     transition: all 0.2s;
 }
 
-.login__form>button {
+/* .login__form>button {
     background-color: #3e6ae1;
     border: none;
     padding: 12px 40px;
@@ -94,11 +94,11 @@
     outline: none;
     margin-bottom: 30px;
     transition: all 0.4s;
-}
+} */
 
-.login__form>button:hover {
+/* .login__form>button:hover {
     background-color: #3457b1;
-}
+} */
 
 .login__divider {
     display: flex;
@@ -117,7 +117,7 @@
     color: #5c5e62;
 }
 
-.login__info>a>button {
+/* .login__info>a>button {
     background-color: transparent;
     border: 3px solid #171a20;
     width: 100%;
@@ -134,4 +134,4 @@
 .login__info>a>button:hover {
     background-color: #171a20;
     color: white;
-}
+} */

@@ -14,12 +14,32 @@ import TeslaAccount from './TeslaAccount';
 import './App.css'
 import {useDispatch, useSelector} from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice'
+import { auth } from './firebase';
 
 function App() {
   console.log("hello");
   const user = useSelector(selectUser)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth)=>{
+      if(userAuth){
+        dispatch(
+          //User is signed in
+          login({
+            email:userAuth.email,
+            uid:userAuth.uid,
+            displayName:userAuth.displayName,
+          })
+        )
+      }else{
+        //User is signed out
+        dispatch(logout( ))
+      }
+    })
+  }, [dispatch])
+
   return (
     <Router>
       <div className='app'>
@@ -31,7 +51,7 @@ function App() {
           />
             {/* {isMenuOpen && <Menu />} */}
           {/* <Route element={<HeaderBlock />}/> */}
-          <Route exact path='/login' element={user ? <Navigate to='/teslaaccount' /> : <Login/>   } />
+          <Route exact path='/login' element={user ? <Navigate to='/teslaaccount' /> : <Login/>} />
           <Route exact path='/signup' element={<SignUp />} />
           <Route exact path='/teslaaccount' element={!user ? (
               <Navigate to='/login' />

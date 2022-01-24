@@ -2,6 +2,8 @@ import React from 'react';
 import ButtonPrimary from './ButtonPrimary'
 import ButtonSecondary from './ButtonSecondary'
 import './Car.css'
+import './ButtonSecondary.css'
+import './ButtonPrimary.css'
 
 function Car({ imgSrc, model, testDrive }) {
   return (
@@ -11,8 +13,8 @@ function Car({ imgSrc, model, testDrive }) {
       </div>
       <h2 className='car__model'>{model}</h2>
       <div className='car__actions'>
-        <ButtonPrimary name='order' />
-        {testDrive && <ButtonSecondary  name='test drive' />}
+        <button className='buttonPrimary' name='order'>order</button>
+        {testDrive && <button className='buttonSecondary' name='test drive'>test drive</button>}
       </div>
       <p className='car__info'>
         <span>Request a Call</span> to speak with a product specialist, value
@@ -20,6 +22,6 @@ function Car({ imgSrc, model, testDrive }) {
       </p>
     </div>
   );
-}
+} 
 
 export default Car;

@@ -24,14 +24,8 @@ function SignUp() {
       if (!lName) {
         return alert('Please enter a last name!')
       }
-  
         createUserWithEmailAndPassword(auth, email, password)
         .then((userAuth) => {
-          userAuth.user
-            .updateProfile({
-              displayName: fName,
-            })
-            .then(() => {
               dispatch(
                 login({
                   email: userAuth.user.email,
@@ -40,7 +34,6 @@ function SignUp() {
                 })
               )
               navigate('/teslaaccount')
-            })
         })
         .catch((error) => alert(error.message))
     }

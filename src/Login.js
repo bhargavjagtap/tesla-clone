@@ -24,7 +24,7 @@ function Login() {
             displayName:userAuth.user.displayName
           })
           )
-          navigate('/teslaacount')
+          navigate('/teslaaccount')
         })
         .catch((error)=>alert(error.message)) 
     }
@@ -62,7 +62,7 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-           <ButtonPrimary name='Sign In' type='submit' onClick={signIn} />
+           <ButtonPrimary name='Sign In' onClick={signIn} />
         </form>
         <div className='login__divider'>
           <hr /> <span>OR</span> <hr />
